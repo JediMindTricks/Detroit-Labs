@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { CurrentWeather } from './current-weather';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import {Forecast } from './forecast';
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +22,9 @@ export class WeatherService {
 
   newCityWeather(city:string){
     return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=381779068d47eab47875181d6b9702e1&units=imperial`);
+  }
+
+  fiveDayForecast(city:string){
+    return this.http.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=381779068d47eab47875181d6b9702e1&units=imperial`);
   }
 }

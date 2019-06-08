@@ -20,7 +20,7 @@ export class CurrentComponent implements OnInit {
       const lat = this.location.latitude;
       const lon = this.location.longitude;
       this.ws.localWeather(lat, lon).subscribe(
-        (data) => {
+        (data: any) => {
           console.log(data);
           this.myWeather = new CurrentWeather(data.name,
                                               data.main.temp,

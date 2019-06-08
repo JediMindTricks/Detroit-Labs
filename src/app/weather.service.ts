@@ -17,4 +17,8 @@ export class WeatherService {
   localWeather(lat:string, lon:string){
     return this.http.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=381779068d47eab47875181d6b9702e1&units=imperial`);
   }
+
+  newCityWeather(city:string){
+    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=381779068d47eab47875181d6b9702e1&units=imperial`);
+  }
 }

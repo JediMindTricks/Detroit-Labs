@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { CurrentWeather } from '../current-weather';
+import { NgForm } from '@angular/forms';
 import 'rxjs';
 
 @Component({
@@ -31,6 +32,20 @@ export class CurrentComponent implements OnInit {
         }
       )
     })
+  }
+
+  onSubmit(weatherForm:NgForm) {
+    this.ws.newCityWeather(weatherForm.value.city).subscribe(
+      (data:any) => {
+        console.log(data);
+        this.myWeather = new CurrentWeather(data.name,
+                                            data.main.temp,
+                                            data.weather[0].icon,
+                                            data.weather[0].description,
+                                            data.main.temp_max,
+                                            data.main.temp_min);
+      }
+    );
   }
 
 }

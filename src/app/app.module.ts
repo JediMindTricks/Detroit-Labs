@@ -9,13 +9,15 @@ import { ForecastComponent } from './forecast/forecast.component';
 import { WeatherService } from './weather.service';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CurrentComponent,
-    ForecastComponent
+    ForecastComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

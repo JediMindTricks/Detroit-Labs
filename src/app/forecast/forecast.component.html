@@ -1,13 +1,13 @@
 <div class="container level">
   <div class="day" *ngFor="let day of cityForecast">
-    <div class="content padding">
+    <div class="box content padding space">
         <h2>{{day.day | date: 'MMMM d'}}</h2>
         <div class="icon">
           <img src="http://openweathermap.org/img/w/{{day.icon}}.png" alt="">
         </div>
         <div class="temp">
-          <h3>Max: {{day.tempMax}}&deg;</h3>
-          <h3>Min: {{day.tempMin}}&deg;</h3>
+          <h3>High: {{day.tempMax}}&deg;</h3>
+          <h3>Low: {{day.tempMin}}&deg;</h3>
         </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
         <input class="input" type="text" formControlName="forecastCity" placeholder="Name of City">
       </div>
       <div class="control">
-        <button class="button is-info">
+        <button class="button is-primary">
           Go
         </button>
       </div>

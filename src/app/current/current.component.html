@@ -1,14 +1,14 @@
 <div class="container">
   <div class="columns is-centered">
-    <div class="content padding">
+    <div class="box content padding space">
       <h1>{{myWeather.cityName}}</h1>
-      <h2>Current Temp: {{myWeather.temp}}&deg;</h2>
+      <h2>Current: {{myWeather.temp}}&deg;</h2>
       <div class="img">
         <img src="http://openweathermap.org/img/w/{{myWeather.icon}}.png" alt="">
       </div>
       <h3>{{myWeather.weatherKind}}</h3>
-      <h4>Temp Max: {{myWeather.tempMax}}&deg;</h4>
-      <h4>Temp Min: {{myWeather.tempMin}}&deg;</h4>
+      <h4>High: {{myWeather.tempMax}}&deg;</h4>
+      <h4>Low: {{myWeather.tempMin}}&deg;</h4>
     </div>  
   </div>
 </div>
@@ -21,7 +21,7 @@
       <input class="input" type="text" ngModel name="city" placeholder="Name of City">
     </div>
     <div class="control">
-      <button class="button is-info">
+      <button class="button is-primary">
         Go
       </button>
     </div>

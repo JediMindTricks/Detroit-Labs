@@ -1,4 +1,23 @@
-<nav>
-  <a [routerLink]="['/']">Current Weather</a>
-  <a [routerLink]="['forecast']">5 Day Forecast</a>
-</nav>
+<nav class="navbar is-primary">
+    <div class="navbar-brand">
+      <span class="navbar-item is-size-3 has-text-weight-bold">Stormi</span>
+    </div>
+  
+    <div class="navbar-item">
+      <div class="navbar-start">
+        <div class="navbar-item has-dropdown is-hoverable is-mobile">
+          <a class="navbar-link" href="#">
+            Forecast
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item has-text-weight-bold" [routerLink]="['/']">
+              Current Weather
+            </a>
+            <a class="navbar-item has-text-weight-bold" [routerLink]="['forecast']">
+              5 Day Forecast
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>

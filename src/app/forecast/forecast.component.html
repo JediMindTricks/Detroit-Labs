@@ -1,16 +1,28 @@
-<form [formGroup]="forecastForm" (ngSubmit)="onSubmit()">
-  <input type="text" formControlName="forecastCity">
-  <button>Go</button>
-</form>
-<div class="container">
+<div class="container level">
   <div class="day" *ngFor="let day of cityForecast">
-    <h2>{{day.day | date: 'MMMM d'}}</h2>
-    <div class="icon">
-      <img src="http://openweathermap.org/img/w/{{day.icon}}.png" alt="">
-    </div>
-    <div class="temp">
-      <h3>Max: {{day.tempMax}}&deg;</h3>
-      <h3>Min: {{day.tempMin}}&deg;</h3>
+    <div class="content padding">
+        <h2>{{day.day | date: 'MMMM d'}}</h2>
+        <div class="icon">
+          <img src="http://openweathermap.org/img/w/{{day.icon}}.png" alt="">
+        </div>
+        <div class="temp">
+          <h3>Max: {{day.tempMax}}&deg;</h3>
+          <h3>Min: {{day.tempMin}}&deg;</h3>
+        </div>
     </div>
   </div>
 </div>
+
+<form [formGroup]="forecastForm" (ngSubmit)="onSubmit()">
+    <div class="field has-addons columns is-centered">
+      <div class="control">
+        <input class="input" type="text" formControlName="forecastCity" placeholder="Name of City">
+      </div>
+      <div class="control">
+        <button class="button is-info">
+          Go
+        </button>
+      </div>
+    </div>
+  </form>
+  

@@ -2,3 +2,11 @@
 .padding {
     padding-top: 20px;
 }
+
+.space {
+    margin: 20px;
+}
+
+html {
+    background-color: #fff5c3;
+}
